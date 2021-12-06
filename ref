@@ -1,0 +1,19 @@
+https://www.youtube.com/watch?v=wik2jzunzA0
+
+https://www.youtube.com/watch?v=wik2jzunzA0
+
+https://www.youtube.com/watch?v=TcPYVqHAHNQ
+
+https://www.youtube.com/watch?v=ut5KlHABVC8
+
+https://www.youtube.com/watch?v=sAfFCbx2KLg
+
+
+.projectlink, .jobtabimg{
+  width: 23px;
+}
+
+ iframe{
+    width: 560px;
+    height: 315px;
+  }
