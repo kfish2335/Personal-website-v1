@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>Kurk Fisher's Portfolio</title>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+  <!-- Meta Tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a href="#hero-section">Kurk Fisher</a>
+    </div>
+    <div class="navbar-menu">
+      <ul>
+        <li><a href="#about-skills-section">About Me</a></li>
+        <li><a href="#experiences-section">Experiences</a></li>
+        <li><a href="#projects-section">Projects</a></li>
+        <!-- Add more navigation items as needed -->
+      </ul>
+    </div>
+    <div class="navbar-actions">
+      <button id="theme-toggle" class="theme-toggle">Dark Mode</button>
+      <button id="hamburger-menu" class="hamburger-menu">
+        <span class="hamburger-icon"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+  
+    <!-- Sidebar for Mobile Navigation -->
+    <div id="sidebar" class="sidebar">
+      <button id="close-sidebar" class="close-sidebar">&times;</button>
+      <ul class="sidebar-menu">
+        <li><a href="#about-skills-section">About Me</a></li>
+        <li><a href="#experiences-section">Experiences</a></li>
+        <li><a href="#projects-section">Projects</a></li>
+        <!-- Add more navigation items as needed -->
+      </ul>
+    </div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section id="hero-section" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-image">
+            <img src="image/Layer 2_upscayl_6x_realesrgan-x4plus.png" alt="Kurk Fisher">
+          </div>
+          <div class="hero-text">
+            <h1>Hello World, I am Kurk Fisher and I am <span id="typing"></span></h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me and Skills Section -->
+    <section id="about-skills-section" class="about-skills-section">
+      <div class="container">
+        <div class="cards-container">
+          <!-- About Me Card -->
+          <div class="card about-card">
+            <div class="window-header" data-card="about-card">
+              <div class="window-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+              </div>
+              <div class="window-title">About Me</div>
+            </div>
+            <div class="window-content">
+              <p>
+                <!-- Your about me content here -->
+                I am a passionate software developer with a love for creating innovative solutions and exploring new technologies.
+              </p>
+            </div>
+          </div>
+          <!-- Skills Card -->
+          <div class="card skills-card">
+            <div class="window-header" data-card="skills-card">
+              <div class="window-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+              </div>
+              <div class="window-title">My Skills</div>
+            </div>
+            <div class="window-content">
+              <ul class="skills-list">
+                <!-- List your skills here -->
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>HTML & CSS</li>
+                <li>React</li>
+                <li>Node.js</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="experiences-section" class="experiences-section">
+      <div class="container">
+        <div class="cards-container">
+          <!-- Jobs Card -->
+          <div class="card jobs-card">
+            <div class="window-header" data-card="jobs-card">
+              <div class="window-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+              </div>
+              <div class="window-title">Jobs</div>
+            </div>
+            <div class="window-content">
+              <ul class="bullet-list">
+                <!-- List your job experiences as bullet points here -->
+                <li>Software Engineer at TechCorp (June 2020 - Present)</li>
+                <li>Junior Developer at WebSolutions (Jan 2018 - May 2020)</li>
+                <li>Intern at CodeFactory (June 2017 - Dec 2017)</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Certifications Card -->
+          <div class="card certifications-card">
+            <div class="window-header" data-card="certifications-card">
+              <div class="window-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+              </div>
+              <div class="window-title">Certifications</div>
+            </div>
+            <div class="window-content">
+              <ul class="bullet-list">
+                <!-- List your certifications as bullet points here -->
+                <li>Certified JavaScript Developer - Code Academy (June 2021)</li>
+                <li>Python Programming Certificate - Online University (March 2020)</li>
+                <li>Full Stack Web Development - Tech Institute (August 2019)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Projects Section -->
+   <section id="projects-section" class="projects-section">
+  <div class="container">
+    <div class="projects-list">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="path-to-image1.jpg" alt="Project One Image">
+        </div>
+        <div class="project-content">
+          <h3>Project One</h3>
+          <p>
+            A web application that helps users track their daily tasks and productivity.
+          </p>
+          <a href="https://github.com/yourusername/project-one" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="path-to-image2.jpg" alt="Project Two Image">
+        </div>
+        <div class="project-content">
+          <h3>Project Two</h3>
+          <p>
+            An e-commerce website built with React and Node.js, featuring a custom shopping cart.
+          </p>
+          <a href="https://github.com/yourusername/project-two" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="path-to-image3.jpg" alt="Project Three Image">
+        </div>
+        <div class="project-content">
+          <h3>Project Three</h3>
+          <p>
+            A mobile app that provides users with personalized workout routines and tracking.
+          </p>
+          <a href="https://github.com/yourusername/project-three" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Add more project cards as needed -->
+    </div>
+  </div>
+</section>
+    <!-- Optional: Include additional sections here -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Side: Email -->
+        <div class="footer-left">
+          <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        </div>
+        
+        <!-- Center: Instagram Icon -->
+        <div class="footer-center">
+          <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+        
+        <!-- Right Side: LinkedIn and Resume Download -->
+        <div class="footer-right">
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          
+          <!-- Resume Download Button -->
+          <a href="path/to/your_resume.pdf" download class="resume-button">
+            <i class="fas fa-download"></i> Resume
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Link to JavaScript -->
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
