@@ -25,4 +25,7 @@ urlpatterns = [
     path('', views.index, name='home'),
      # Catch all slugs for redirects
     path('<slug:slug>/', views.handle_redirect, name='handle_redirect'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

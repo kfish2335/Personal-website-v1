@@ -101,7 +101,9 @@ body.light-mode {
   border-radius: 5px;
   font-size: 1rem;
   transition: background-color 0.3s, color 0.3s;
-  margin-right: 10px;
+  margin-right: 10px; /* Space between the toggle and hamburger menu */
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .theme-toggle:hover {
@@ -260,23 +262,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Light/Dark Mode Toggle Button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 1000;
-}
-
-.theme-toggle:hover {
-  background-color: var(--primary-color);
-}
 
 /* MAIN CONTENT STYLES */
 .main-content {
@@ -467,109 +452,98 @@ section {
 
 /* EXPERIENCES SECTION STYLES */
 .experiences-section {
-  height: 100vh;
   padding: 60px 20px;
   background-color: var(--primary-color);
   color: var(--text-color);
 }
 
-.experiences-section .container {
-  max-width: 1200px;
+.section-header h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Experiences Card */
+.experiences-card {
+  max-width: 800px;
   margin: 0 auto;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.experiences-section .cards-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Card Styles (Reuse existing card styles) */
-.experiences-section .card {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--window-border-color);
-  margin-bottom: 20px;
-  border-radius: 5px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--window-border-color);
+  border-radius: 10px;
   overflow: hidden;
+}
+
+/* Tab Header */
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid var(--window-border-color);
+}
+
+.tab-button {
   flex: 1;
-  transition: transform 0.3s;
-}
-
-.experiences-section .card:hover {
-  transform: scale(1.05);
-}
-
-.experiences-section .window-header {
-  background-color: var(--window-header-color);
-  padding: 10px;
-  display: flex;
-  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 15px;
   cursor: pointer;
+  text-align: center;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
-.experiences-section .window-buttons {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
+.tab-button:hover,
+.tab-button.active {
+  background-color: var(--accent-color);
+  color: var(--background-color);
 }
 
-.experiences-section .window-buttons span {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.experiences-section .window-buttons .close {
-  background-color: #ff5f56;
-}
-
-.experiences-section .window-buttons .minimize {
-  background-color: #ffbd2e;
-}
-
-.experiences-section .window-buttons .maximize {
-  background-color: #27c93f;
-}
-
-.experiences-section .window-title {
-  font-weight: bold;
-}
-
-.experiences-section .window-content {
+/* Tab Content */
+.tab-content {
   padding: 20px;
 }
 
-.experiences-section .window-content.collapsed {
+.tab-pane {
   display: none;
 }
 
-.experience-list,
-.certifications-list {
-  list-style: none;
-  padding: 0;
+.tab-pane.active {
+  display: block;
 }
 
-.experience-list li,
-.certifications-list li {
-  margin-bottom: 20px;
+/* Experience and Certification Items */
+.experience-item,
+.certification-item {
+  margin-bottom: 30px;
 }
 
-.experience-list h3,
-.certifications-list h3 {
+.experience-item h3,
+.certification-item h3 {
   font-size: 1.5rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.experience-list p,
-.certifications-list p {
-  font-size: 1.1rem;
+.experience-item p,
+.certification-item p {
   margin-bottom: 5px;
+  line-height: 1.6;
 }
+
+/* Style for Bullet Points */
+.experience-item ul,
+.certification-item ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.experience-item ul li,
+.certification-item ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+
 /* PROJECTS SECTION STYLES */
 .projects-section {
   height: 100vh;
@@ -649,6 +623,7 @@ section {
   color: var(--text-color);
   padding: 15px 20px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  border-top: 2px solid var(--window-border-color);
 }
 
 .footer-container {
@@ -778,7 +753,6 @@ section {
   .theme-toggle {
     flex: 1;
     margin-right: 50px;
-    margin-top: -12px;
   }
 }
 

@@ -19,7 +19,7 @@ class Skill(models.Model):
 class Job(models.Model):
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)  # Optional for current jobs
     
@@ -28,8 +28,8 @@ class Job(models.Model):
 
 class Certification(models.Model):
     title = models.CharField(max_length=200)
-    issuer = models.CharField(max_length=200)
-    date_issued = models.DateField()
+    issuer = models.CharField(max_length=200, blank=True, null=True)
+    date_issued = models.DateField(blank=True, null=True)
     
     def __str__(self):
         return f"{self.title} from {self.issuer}"
@@ -39,6 +39,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     link = models.URLField()
+    gitLink = models.URLField()
     image = models.ImageField(upload_to='projects/')
     
     def __str__(self):

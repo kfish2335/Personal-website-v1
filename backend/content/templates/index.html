@@ -20,10 +20,11 @@
     </div>
     <div class="navbar-menu">
       <ul>
+        <li><a href="#hero-section">Home</a></li>
         <li><a href="#about-skills-section">About Me</a></li>
         <li><a href="#experiences-section">Experiences</a></li>
         <li><a href="#projects-section">Projects</a></li>
-        <!-- Add more navigation items as needed -->
+        <!-- Add more navigation items -->
       </ul>
     </div>
     <div class="navbar-actions">
@@ -55,7 +56,7 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-image">
-            <img src="image/Layer 2_upscayl_6x_realesrgan-x4plus.png" alt="Kurk Fisher">
+            <img src="{% static 'images/profilepic.png' %}" alt="Kurk Fisher">
           </div>
           <div class="hero-text">
             <h1>Hello World, I am Kurk Fisher and I am <span id="typing"></span></h1>
@@ -80,8 +81,7 @@
             </div>
             <div class="window-content">
               <p>
-                <!-- Your about me content here -->
-                I am a passionate software developer with a love for creating innovative solutions and exploring new technologies.
+                {{about.content}}
               </p>
             </div>
           </div>
@@ -98,11 +98,15 @@
             <div class="window-content">
               <ul class="skills-list">
                 <!-- List your skills here -->
+                {% for skill in skills %}
+                <li>{{ skill.name }}</li>
+            {% empty %}
                 <li>JavaScript</li>
                 <li>Python</li>
                 <li>HTML & CSS</li>
                 <li>React</li>
                 <li>Node.js</li>
+            {% endfor %}
               </ul>
             </div>
           </div>
@@ -111,45 +115,47 @@
     </section>
     
     <section id="experiences-section" class="experiences-section">
-      <div class="container">
-        <div class="cards-container">
-          <!-- Jobs Card -->
-          <div class="card jobs-card">
-            <div class="window-header" data-card="jobs-card">
-              <div class="window-buttons">
-                <span class="close"></span>
-                <span class="minimize"></span>
-                <span class="maximize"></span>
-              </div>
-              <div class="window-title">Jobs</div>
-            </div>
-            <div class="window-content">
-              <ul class="bullet-list">
-                <!-- List your job experiences as bullet points here -->
-                <li>Software Engineer at TechCorp (June 2020 - Present)</li>
-                <li>Junior Developer at WebSolutions (Jan 2018 - May 2020)</li>
-                <li>Intern at CodeFactory (June 2017 - Dec 2017)</li>
+      <div class="section-header">
+        <h2>Experiences</h2>
+      </div>
+      <div class="experiences-card">
+        <div class="tab-header">
+          <button class="tab-button active" data-tab="job" aria-controls="job" aria-selected="true">Job</button>
+          <button class="tab-button" data-tab="certification" aria-controls="certification" aria-selected="false">Certification</button>
+        </div>
+        <div class="tab-content">
+          <!-- Job Content -->
+          <div class="tab-pane active" id="job">
+            <!-- Job Experience Content as Bullet Points -->
+            <div class="experience-item">
+
+              <ul>
+                {% for job in jobs %}
+                <li>{{ job.title }} at {{ job.company }}</li>
+            {% empty %}
+                <li>Software Engineer at TechCorp</li>
+                <li>Software Engineer at TechCorp</li>
+                <li>Software Engineer at TechCorp</li>
+            {% endfor %}
               </ul>
             </div>
+            <!-- Add more job experiences as needed -->
           </div>
-          <!-- Certifications Card -->
-          <div class="card certifications-card">
-            <div class="window-header" data-card="certifications-card">
-              <div class="window-buttons">
-                <span class="close"></span>
-                <span class="minimize"></span>
-                <span class="maximize"></span>
-              </div>
-              <div class="window-title">Certifications</div>
-            </div>
-            <div class="window-content">
-              <ul class="bullet-list">
-                <!-- List your certifications as bullet points here -->
-                <li>Certified JavaScript Developer - Code Academy (June 2021)</li>
-                <li>Python Programming Certificate - Online University (March 2020)</li>
-                <li>Full Stack Web Development - Tech Institute (August 2019)</li>
+          <!-- Certification Content -->
+          <div class="tab-pane" id="certification">
+            <!-- Certification Content as Bullet Points -->
+            <div class="certification-item">
+              <ul>
+                {% for certification in certifications %}
+                <li>{{ certification.title }}</li>
+              {% empty %}
+              <li>Certified JavaScript Developer</li>
+              <li>Certified JavaScript Developer</li>
+              <li>Certified JavaScript Developer</li>
+              {% endfor %}
               </ul>
             </div>
+            <!-- Add more certifications as needed -->
           </div>
         </div>
       </div>
@@ -198,11 +204,11 @@
           <a href="https://github.com/yourusername/project-three" target="_blank" class="project-link">View Project</a>
         </div>
       </div>
-      <!-- Add more project cards as needed -->
+      <!-- End Project -->
     </div>
   </div>
 </section>
-    <!-- Optional: Include additional sections here -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <!-- Left Side: Email -->
